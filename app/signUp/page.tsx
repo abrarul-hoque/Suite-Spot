@@ -4,7 +4,6 @@ import { AiOutlineArrowRight } from "react-icons/ai"; // React icon for arrow ri
 import { FaClipboardList, FaUtensils } from "react-icons/fa";
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
-import axios from "axios";
 
 const SignUpForm = () => {
   // Initialize the useForm hook
@@ -17,7 +16,9 @@ const SignUpForm = () => {
   // Submit handler
 
   const [accountType, setAccountType] = useState("");
-  const onSubmit = async (data) => {};
+  const onSubmit = async () => {
+  };
+
   return (
     <section className="max-w-6xl mx-auto rounded-xl shadow-2xl my-10 mt-24">
       <div className="flex justify-center min-h-screen">
@@ -45,11 +46,10 @@ const SignUpForm = () => {
                 {/* Restaurant Manager Button */}
                 <button
                   onClick={() => setAccountType("restaurantManager")}
-                  className={`flex justify-center w-full px-6 py-3 mt-4 md:mt-0 md:w-auto md:mx-2 rounded-lg focus:outline-none border border-blue-400 text-blue-400 ${
-                    accountType === "restaurantManager"
-                      ? "bg-blue-500 text-white" // Active state style for Customer
-                      : "text-blue-400 border-blue-400 dark:text-blue-400 dark:border-blue-400" // Default style for inactive button
-                  }`}
+                  className={`flex justify-center w-full px-6 py-3 mt-4 md:mt-0 md:w-auto md:mx-2 rounded-lg focus:outline-none border border-blue-400 text-blue-400 ${accountType === "restaurantManager"
+                    ? "bg-blue-500 text-white" // Active state style for Customer
+                    : "text-blue-400 border-blue-400 dark:text-blue-400 dark:border-blue-400" // Default style for inactive button
+                    }`}
                 >
                   <FaClipboardList className="w-6 h-6 " />
                   <span className="mx-2">Restaurant Manager</span>
@@ -58,11 +58,10 @@ const SignUpForm = () => {
                 {/* Customer/Visitor Button */}
                 <button
                   onClick={() => setAccountType("customer")}
-                  className={`flex justify-center w-full px-6 py-3 mt-4 md:mt-0 md:w-auto md:mx-2 rounded-lg focus:outline-none border border-blue-400 text-blue-400 ${
-                    accountType === "customer"
-                      ? "bg-blue-500 text-white" // Active state style for Customer
-                      : "text-blue-400 border-blue-400 dark:text-blue-400 dark:border-blue-400" // Default style for inactive button
-                  }`}
+                  className={`flex justify-center w-full px-6 py-3 mt-4 md:mt-0 md:w-auto md:mx-2 rounded-lg focus:outline-none border border-blue-400 text-blue-400 ${accountType === "customer"
+                    ? "bg-blue-500 text-white" // Active state style for Customer
+                    : "text-blue-400 border-blue-400 dark:text-blue-400 dark:border-blue-400" // Default style for inactive button
+                    }`}
                 >
                   <FaUtensils className="w-6 h-6" />
                   <span className="mx-2">Customer</span>

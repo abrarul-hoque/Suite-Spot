@@ -14,7 +14,7 @@ import {
 import { useUser } from "@clerk/nextjs";
 
 const avatarImg = "/path/to/default-avatar.jpg";
-const dashboardRouteDefine = "/dashboard";
+// const dashboardRouteDefine = "/dashboard";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -53,11 +53,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`${
-        isActive("/")
+      className={`${isActive("/")
           ? "text-white"
           : "text-slate-900 border-b-2 shadow-lg bg-blue-50"
-      } absolute top-0 left-0 right-0 p-6 flex justify-between items-center`}
+        } absolute top-0 left-0 right-0 p-6 flex justify-between items-center`}
     >
       <h1 className="text-2xl font-bold">Suite-Spot</h1>
 
@@ -66,9 +65,8 @@ export default function Navbar() {
           <Link
             key={menu.path}
             href={menu.path}
-            className={`block py-2 md:inline hover:text-gray-500 ${
-              isActive(menu.path) ? "text-blue-500 font-semibold" : ""
-            }`}
+            className={`block py-2 md:inline hover:text-gray-500 ${isActive(menu.path) ? "text-blue-500 font-semibold" : ""
+              }`}
           >
             {menu.name}
           </Link>

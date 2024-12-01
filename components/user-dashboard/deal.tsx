@@ -1,5 +1,5 @@
 import React from 'react';
-import { BiFilterAlt, BiSearch } from 'react-icons/bi';
+import { BiFilterAlt } from 'react-icons/bi';
 import DealTable from '../Shared/dealTable';
 
 const Deal = () => {

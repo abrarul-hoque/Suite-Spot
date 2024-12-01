@@ -16,7 +16,6 @@
 
 
 import clientPromise from "@/lib/dbconnect"; // Assuming this is the correct import
-import Room from "@/models/Room"; // Assuming you have a Room model
 
 // GET handler to retrieve all rooms
 export async function GET() {

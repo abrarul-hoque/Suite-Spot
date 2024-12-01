@@ -7,11 +7,11 @@ const Stats = () => {
                 <h1 className='text-xl mb-4'>Overview</h1>
                 <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4'>
                     <div>
-                        <p className='text-sm text-gray-400'>Today's</p>
+                        <p className='text-sm text-gray-400'>Todays</p>
                         <p className='text-gray-600'>Check-in <span className='text-[#1366D9] text-xl font-semibold ml-2'>23</span></p>
                     </div>
                     <div>
-                        <p className='text-sm text-gray-400'>Today's</p>
+                        <p className='text-sm text-gray-400'>Todays</p>
                         <p className='text-gray-600'>Check-out <span className='text-[#1366D9] text-xl font-semibold ml-2'>13</span></p>
                     </div>
                     <div>

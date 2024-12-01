@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 // import { useRouter } from "next/router";
 import Container from "@/components/Shared/Container";
 import RoomReservation from "@/components/RoomDetails/RoomReservation";
@@ -7,25 +7,25 @@ import Heading from "@/components/Shared/Heading";
 import Image from "next/image";
 
 // Define Room Data Type
-interface RoomHost {
-  name: string;
-  image: string;
-  email: string;
-}
+// interface RoomHost {
+//   name: string;
+//   image: string;
+//   email: string;
+// }
 
-interface Room {
-  _id: string;
-  location: string;
-  category: string;
-  title: string;
-  price: string;
-  guests: number;
-  bedrooms: number;
-  bathrooms: number;
-  host: RoomHost;
-  description: string;
-  image: string;
-}
+// interface Room {
+//   _id: string;
+//   location: string;
+//   category: string;
+//   title: string;
+//   price: string;
+//   guests: number;
+//   bedrooms: number;
+//   bathrooms: number;
+//   host: RoomHost;
+//   description: string;
+//   image: string;
+// }
 
 const RoomDetails: React.FC = () => {
   // const [state, setState] = useState([
@@ -41,10 +41,11 @@ const RoomDetails: React.FC = () => {
   // const roomId = 'router.query';
 
   // Handle case when router.query is not ready (initial SSR render)
-  const [clientSide, setClientSide] = useState(false);
-  useEffect(() => {
-    setClientSide(true); // Only run after client-side mount
-  }, []);
+  // const [clientSide, setClientSide] = useState(false);
+
+  // useEffect(() => {
+  //   setClientSide(true); // Only run after client-side mount
+  // }, []);
 
   // Fetch room data
   // const {

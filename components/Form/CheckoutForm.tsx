@@ -5,7 +5,7 @@ import {
   useElements,
   useStripe,
 } from "@stripe/react-stripe-js";
-import { CardElementProps } from "@stripe/stripe-js";
+// import { CardElementProps } from "@stripe/stripe-js";
 
 import { useRouter } from "next/router";
 import toast from "react-hot-toast";
@@ -35,7 +35,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
   bookingInfo,
   refetch,
 }) => {
-  const user  = false
+  const user = false
   const stripe = useStripe();
   const elements = useElements();
   const router = useRouter();
@@ -78,7 +78,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
 
     try {
       // Create payment method
-      const { error: methodError, paymentMethod } = await stripe.createPaymentMethod({
+      const { error: methodError } = await stripe.createPaymentMethod({
         type: "card",
         card,
         billing_details: {
