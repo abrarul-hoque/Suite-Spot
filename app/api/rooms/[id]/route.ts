@@ -1,17 +1,11 @@
-
 import { NextResponse } from "next/server";
 import { ObjectId } from "mongodb";
 import clientPromise from "@/lib/dbconnect";
 
-// Define RouteContext type for compatibility
-interface RouteContext {
-  params: { id: string };
-}
-
 // GET handler for retrieving a specific room by ID
-export async function GET(req: Request, context: RouteContext) {
+export async function GET(req: Request, { params }: { params: { id: string } }) {
   try {
-    const { id } = context.params;
+    const { id } = params;
 
     if (!ObjectId.isValid(id)) {
       return NextResponse.json({ success: false, message: "Invalid room ID!" }, { status: 400 });
@@ -38,9 +32,9 @@ export async function GET(req: Request, context: RouteContext) {
 }
 
 // PATCH handler for updating a specific room by ID
-export async function PATCH(req: Request, context: RouteContext) {
+export async function PATCH(req: Request, { params }: { params: { id: string } }) {
   try {
-    const { id } = context.params;
+    const { id } = params;
 
     if (!ObjectId.isValid(id)) {
       return NextResponse.json({ success: false, message: "Invalid room ID!" }, { status: 400 });
@@ -77,9 +71,9 @@ export async function PATCH(req: Request, context: RouteContext) {
 }
 
 // DELETE handler for deleting a specific room by ID
-export async function DELETE(req: Request, context: RouteContext) {
+export async function DELETE(req: Request, { params }: { params: { id: string } }) {
   try {
-    const { id } = context.params;
+    const { id } = params;
 
     if (!ObjectId.isValid(id)) {
       return NextResponse.json({ success: false, message: "Invalid room ID!" }, { status: 400 });
