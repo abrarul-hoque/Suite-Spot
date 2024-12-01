@@ -3,9 +3,9 @@ import { ObjectId } from "mongodb";
 import clientPromise from "@/lib/dbconnect";
 
 // GET handler for retrieving a specific room by ID
-export async function GET(req: Request, { params }: { params: { id: string } }) {
+export async function GET(req: Request, context: { params: { id: string } }) {
   try {
-    const { id } = params;
+    const { id } = context.params;
 
     if (!ObjectId.isValid(id)) {
       return NextResponse.json({ success: false, message: "Invalid room ID!" }, { status: 400 });
@@ -32,9 +32,9 @@ export async function GET(req: Request, { params }: { params: { id: string } }) 
 }
 
 // PATCH handler for updating a specific room by ID
-export async function PATCH(req: Request, { params }: { params: { id: string } }) {
+export async function PATCH(req: Request, context: { params: { id: string } }) {
   try {
-    const { id } = params;
+    const { id } = context.params;
 
     if (!ObjectId.isValid(id)) {
       return NextResponse.json({ success: false, message: "Invalid room ID!" }, { status: 400 });
@@ -71,9 +71,9 @@ export async function PATCH(req: Request, { params }: { params: { id: string } }
 }
 
 // DELETE handler for deleting a specific room by ID
-export async function DELETE(req: Request, { params }: { params: { id: string } }) {
+export async function DELETE(req: Request, context: { params: { id: string } }) {
   try {
-    const { id } = params;
+    const { id } = context.params;
 
     if (!ObjectId.isValid(id)) {
       return NextResponse.json({ success: false, message: "Invalid room ID!" }, { status: 400 });
